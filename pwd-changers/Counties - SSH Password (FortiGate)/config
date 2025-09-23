@@ -1,0 +1,56 @@
+edit "Counties - SSH Password (FortiGate/FortiOS)"
+        set description "CE Custom"
+        config change
+                edit 1
+                        set type expect-prompt
+                        set expect-action no-match-cont
+                next
+                edit 2
+                        set type expect
+                        set command "#"
+                next
+                edit 3
+                        set command "config system admin"
+                next
+                edit 4
+                        set type expect
+                        set command "(admin)"
+                next
+                edit 5
+                        set command "edit $USER"
+                next
+                edit 6
+                        set type expect
+                        set command "($USER)"
+                next
+                edit 7
+                        set command "set password \"$NEWPASSWD\" \"$PASSWORD\""
+                next
+                edit 8
+                        set type expect
+                        set expect-action match-abort
+                        set command "Command fail"
+                        set delay 6000
+                next
+                edit 9
+                        set type expect
+                        set command "($USER) "
+                        set delay 100
+                next
+                edit 10
+                        set command "next"
+                next
+                edit 11
+                        set type expect-prompt
+                        set expect-action no-match-cont
+                next
+                edit 12
+                        set critical-step enable
+                        set command "end"
+                next
+                edit 13
+                        set type expect
+                        set command "exit"
+                next
+        end
+next
