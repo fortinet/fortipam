@@ -1,0 +1,27 @@
+config secret password-changer
+    edit "Cisco_Nexus"
+        set new-line-mode lf
+        config change
+            edit 1
+                set type expect-prompt
+            next
+            edit 2
+                set command "configure terminal"
+            next
+            edit 3
+                set type expect
+                set command "(config)#"
+            next
+            edit 4
+                set command "username $USER password $NEWPASSWD"
+            next
+            edit 5
+                set type expect
+                set command "#"
+            next
+            edit 6
+                set command "end"
+            next
+        end
+    next
+end
