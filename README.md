@@ -6,6 +6,7 @@ This repository is used for sharing customized FortiPAM settings and general inf
 [Templates](templates/README.md)  
 [Password-changers](pwd-changers/README.md)  
 [Guides](guides/README.md)  
+[Tools](tools/README.md)  
 
 ### Contributing
 We welcome and encourage contributions to this project! To submit a pull request, fork the repository and push changes to any branch of the copy, then a pull request can be made in FortiPAM's main repo.
