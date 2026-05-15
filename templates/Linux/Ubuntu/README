@@ -1,0 +1,1 @@
+When target SSH server is using key mode to authentication, and you still want auto_password on secret, then you can consider the template. 
