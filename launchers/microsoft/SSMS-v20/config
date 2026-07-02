@@ -1,0 +1,46 @@
+config secret launcher
+    edit "SSMS20-SC"
+        set type other
+        set is-file-launcher false
+        set elevation none
+        set launch-timeout 15
+        config os_app
+            edit 1
+                set name "SSMS20"
+                set os_type windows
+                set multiprocess disable
+                set fullscreen-record disable
+                set exe "\"C:\\Program Files (x86)\\Microsoft SQL Server Management Studio 20\\Common7\\IDE\\Ssms.exe\""
+                set parameter ''
+                set proc-matcher-type default
+                set client-software ''
+                config fct-script
+                    edit 1
+                        set cmd "Window.ClearText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"6.2.1.1.1.1.4.1\" 90000"
+                    next
+                    edit 2
+                        set cmd "Window.SetText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"6.2.1.1.1.1.4.1\" \"$HOST\" 900000"
+                    next
+                    edit 3
+                        set cmd "Window.SelectDropdown.ByPath.Value \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"6.2.1.1.1.1.6\" \"SQL Server Authentication\" 60000"
+                    next
+                    edit 4
+                        set cmd "Window.ClearText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"6.2.1.1.1.1.8.1\" 60000"
+                    next
+                    edit 5
+                        set cmd "Window.SetText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"6.2.1.1.1.1.8.1\" \"$USER\" 60000"
+                    next
+                    edit 6
+                        set cmd "Window.SetText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"6.2.1.1.1.1.10\" \"$PASSWORD\" 60000"
+                    next
+                    edit 7
+                        set cmd "Window.SelectDropdown.ByPath.Value \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"6.2.1.1.1.1.14\" \"Optional\" 60000"
+                    next
+                    edit 8
+                        set cmd "Window.ClickButton.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"2\" 60000"
+                    next
+                end
+            next
+        end
+    next
+end
