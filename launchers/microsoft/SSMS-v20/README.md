@@ -17,8 +17,7 @@ Credentials are injected by FortiClient PAM via `fct-script` commands — the us
 
 ## Requirements
 
-- **FortiPAM 7.4.4 or later** (minimum version)
-- **FortiClient PAM** installed on the client machine (this launcher relies on FortiClient PAM `fct-script` automation)
+- **FortiClient PAM 7.4.4 or later** (minimum version) installed on the client machine (this launcher relies on FortiClient PAM `fct-script` automation)
 - SSMS 20 installed at the default path:
   `C:\Program Files (x86)\Microsoft SQL Server Management Studio 20\Common7\IDE\Ssms.exe`
   (adjust the `exe` path in the config if installed elsewhere)
