@@ -1,4 +1,4 @@
 # Customized Templates
 
 #### Linux
-- [Ubuntu](<Linux/Ubuntu/config>) - by FortiPAM team
+- [Ubuntu](<Linux/Ubuntu/config>) - by the FortiPAM team

@@ -1,0 +1,40 @@
+config secret launcher
+    edit "SSMS19-SC"
+        set type other
+        config os_app
+            edit 1
+                set name "SSMS19"
+                set exe "ssms"
+                config fct-script
+                    edit 1
+                        set cmd "Window.ClearText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"2.2.1.4.1\" 90000"
+                    next
+                    edit 2
+                        set cmd "Window.SetText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"2.2.1.4.1\" \"$HOST\" 900000"
+                    next
+                    edit 3
+                        set cmd "Window.SetText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"2.2.1.4.1\" \",\" 900000"
+                    next
+                    edit 4
+                        set cmd "Window.SetText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"2.2.1.4.1\" \"$PORT\" 900000"
+                    next
+                    edit 5
+                        set cmd "Window.SelectDropdown.ByPath.Value \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"2.2.1.6\" \"SQL Server Authentication\" 60000"
+                    next
+                    edit 6
+                        set cmd "Window.ClearText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"2.2.1.8.1\" 60000"
+                    next
+                    edit 7
+                        set cmd "Window.SetText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"2.2.1.8.1\" \"$USER\" 60000"
+                    next
+                    edit 8
+                        set cmd "Window.SetText.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"2.2.1.10\" \"$PASSWORD\" 60000"
+                    next
+                    edit 9
+                        set cmd "Window.ClickButton.Path \"WindowsForms10.Window.8.app.0..*\" \"Connect to Server\" \"3\" 60000"
+                    next
+                end
+            next
+        end
+    next
+end
