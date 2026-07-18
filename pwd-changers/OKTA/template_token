@@ -1,0 +1,12 @@
+config secret template
+    edit "OKTA-Token"
+        config field
+            edit "Token"
+                set type password
+            next
+        end
+        config web-filler
+        end
+        set server-info Others
+    next
+end

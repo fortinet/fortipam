@@ -1,0 +1,28 @@
+config secret template
+    edit "OKTA-User"
+        config field
+            edit "URL"
+                set type url
+            next
+            edit "Username"
+                set type username
+            next
+            edit "Password"
+                set type password
+                set need-edit enable
+            next
+        end
+        config launcher
+            edit 1
+                set launcher-name "Web Browsing"
+            next
+        end
+        config password-changer
+            set password-changer-name "Okta Password Changer"
+            set port 443
+        end
+        config web-filler
+        end
+        set server-info Others
+    next
+end
