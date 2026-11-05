@@ -1,0 +1,5 @@
+Changing password by token in OKTA platform. Please check below files:
+- password_changer:  a web_api password changer.
+- template_token:    a secret with okta token is created basing on the template
+- template_user:     a secret with username/password is created basing on the template.  The secret can be used to launch web_browsing to connect OKTA, and do password changer with associated secret.
+- secret_config_example:  It is an example to configure target and secrets basing  template_user/template_token and password_changer.
